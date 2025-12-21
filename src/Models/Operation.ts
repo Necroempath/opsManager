@@ -2,7 +2,7 @@ import {v4 as uuidv4} from 'uuid';
 
 export type OperationType = 'income' | 'expense';
 
-export interface OperationsProps {
+export interface OperationProps {
   id: string;
   type: OperationType;
   title: string;
@@ -19,7 +19,7 @@ export class Operation {
   date: string;
   categoryId: string;
 
-  constructor(props: Omit<OperationsProps, 'id'>) {
+  constructor(props: Omit<OperationProps, 'id'>) {
     this.id = uuidv4();
     this.type = props.type;
     this.title = props.title;

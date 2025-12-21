@@ -1,0 +1,25 @@
+import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
+import { Operation, type OperationProps } from "../Models/Operation";
+
+interface OperationState {
+    operations: Operation[];
+}
+
+const initialState: OperationState = {
+    operations: []
+};
+
+export const operationSlice = createSlice({
+    name: 'operations',
+    initialState,
+    reducers: {
+        addOperation: (state, action: PayloadAction<Omit<OperationProps, 'id'>>) => {
+            state.operations.push(new Operation(action.payload));
+        },
+        deleteOperation: (state, action: PayloadAction<string>) => {
+            state.operations.filter(op => op.id !== action.payload);
+        }
+    }
+});
+
+export const {addOperation, deleteOperation} = operationSlice.actions;

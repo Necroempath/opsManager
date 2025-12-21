@@ -1,36 +1,24 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
-import { Operation } from './Models/Operation'
+import { useState } from "react";
+import reactLogo from "./assets/react.svg";
+import viteLogo from "/vite.svg";
+import "./App.css";
+import { Operation } from "./Models/Operation";
 
 function App() {
-  const [count, setCount] = useState(0)
-  //let op = new Operation({ type: 'income', title: 'new task', amount: 500, date: new Date().toISOString(), categoryId: 'a'};)
+  const [count, setCount] = useState(0);
+  let op = new Operation({
+    type: "income",
+    title: "new task",
+    amount: 500,
+    date: new Date().toISOString(),
+    categoryId: "a",
+  });
+
   return (
     <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
-      </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.tsx</code> and save to test HMR
-        </p>
-      </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
+      <p>{op.amount}</p>
     </>
-  )
+  );
 }
 
-export default App
+export default App;
