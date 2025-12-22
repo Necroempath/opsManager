@@ -1,7 +1,7 @@
 import { Category } from "../Models/Category";
 
 
-export const defaultCategories: Category[] = [
+const builtinCategories: Category[] = [
   new Category({ name: 'Salary', builtin: true }),
   new Category({ name: 'Freelance', builtin: true }),
   new Category({ name: 'Food', builtin: true }),
@@ -13,3 +13,5 @@ export const defaultCategories: Category[] = [
   new Category({ name: 'Shopping', builtin: true }),
   new Category({ name: 'Miscellaneous', builtin: true }),
 ];
+
+export default builtinCategories;

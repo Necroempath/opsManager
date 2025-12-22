@@ -1,12 +1,13 @@
 import { createSlice, type PayloadAction } from "@reduxjs/toolkit";
 import { Category, type CategoryProps } from "../Models/Category";
+import builtinCategories from "../data/builtinCategories";
 
 interface CategoryState {
     categories: Category[];
 }
 
 const initialState: CategoryState = {
-    categories: []
+    categories: builtinCategories
 }
 
 const categorySlice = createSlice({
