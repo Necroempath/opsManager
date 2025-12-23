@@ -1,14 +1,16 @@
-import React from 'react';
 import { NavLink } from 'react-router-dom';
 
 const Header: React.FC = () => {
   const linkClass = ({ isActive }: { isActive: boolean }) =>
-    `px-4 py-2 rounded hover:bg-primary transition-colors ${
-      isActive ? 'bg-primary text-white' : 'text-gray-700'
-    }`;
+    [
+      "px-4 py-2 rounded-md text-md font-medium transition-colors",
+      isActive
+        ? "bg-blue-600 text-white"
+        : "text-gray-700 hover:bg-gray-100 hover:text-gray-800",
+    ].join(" ");
 
   return (
-    <header className="bg-bg shadow-md p-4 flex justify-center gap-4">
+    <header className="shadow-md p-4 flex justify-center gap-4">
       <NavLink to="/" className={linkClass}>
         Operations
       </NavLink>
