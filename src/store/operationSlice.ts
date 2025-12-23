@@ -5,8 +5,10 @@ interface OperationState {
     operations: Operation[];
 }
 
+const savedOperations = localStorage.getItem('operations');
+
 const initialState: OperationState = {
-    operations: []
+    operations: savedOperations ? JSON.parse(savedOperations) : []
 };
 
 export const operationSlice = createSlice({

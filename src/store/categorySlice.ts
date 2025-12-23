@@ -6,8 +6,10 @@ interface CategoryState {
     categories: Category[];
 }
 
+const savedCategories = localStorage.getItem('categories');
+
 const initialState: CategoryState = {
-    categories: builtinCategories
+    categories: savedCategories ? JSON.parse(savedCategories) : builtinCategories
 }
 
 const categorySlice = createSlice({

@@ -3,7 +3,7 @@ import type { RootState } from "../store";
 import OperationTable from "../components/OperationTable";
 import OperationTypeFilter from "../components/OperationTypeFilter";
 import type { OperationFilter } from "../Models/Operation";
-import { useEffect, useState } from "react";
+import { useState } from "react";
 
 const OperationsPage = () => {
   const [type, setType] = useState<OperationFilter>("all");
