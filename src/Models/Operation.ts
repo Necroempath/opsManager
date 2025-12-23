@@ -2,6 +2,8 @@ import {v4 as uuidv4} from 'uuid';
 
 export type OperationType = 'income' | 'expense';
 
+export type OperationFilter = 'all' | 'income' | 'expense';
+
 export interface OperationProps {
   id: string;
   type: OperationType;

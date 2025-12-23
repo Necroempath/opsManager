@@ -14,7 +14,7 @@ const OperationTable: React.FC<OperationTableProps> = ({
     categories.find((c) => c.id === id)?.name ?? "Unknown";
 
   return (
-    <div className="overflow-hidden rounded-md mt-10">
+    <div className="overflow-hidden rounded-md">
       <table className="w-full border-collapse text-md">
 
         <thead className="bg-blue-600 text-white">

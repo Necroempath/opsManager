@@ -69,7 +69,7 @@ const AddOperationForm: React.FC<AddOperationFormProps> = ({ type }) => {
    return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md rounded-md border m-auto mt-10 border-gray-300 bg-white p-6 shadow-md"
+      className="max-w-md rounded-md border m-auto border-gray-300 bg-white p-6 shadow-md"
     >
       <h2 className="mb-4 text-lg font-medium text-gray-800">
         Add {type === 'income' ? 'Income' : 'Expense'}
@@ -84,7 +84,7 @@ const AddOperationForm: React.FC<AddOperationFormProps> = ({ type }) => {
           className={`w-full rounded-md border px-3 py-2 text-md focus:outline-none focus:ring-2 ${
             errors.title
               ? 'border-red-400 focus:ring-red-300'
-              : 'border-gray-300 focus:ring-green-400'
+              : 'border-gray-300 focus:ring-blue-600'
           }`}
         />
         {errors.title && (
@@ -96,7 +96,7 @@ const AddOperationForm: React.FC<AddOperationFormProps> = ({ type }) => {
         <select
           value={categoryId}
           onChange={(e) => setCategoryId(e.target.value)}
-          className="w-full rounded-md border border-gray-300 px-3 py-2 text-md focus:outline-none focus:ring-2 focus:ring-green-400"
+          className="w-full rounded-md border border-gray-300 px-3 py-2 text-md focus:outline-none focus:ring-2 focus:ring-blue-600"
         >
           {categories.map((cat) => (
             <option key={cat.id} value={cat.id}>
@@ -115,7 +115,7 @@ const AddOperationForm: React.FC<AddOperationFormProps> = ({ type }) => {
           className={`w-full rounded-md border px-3 py-2 text-md focus:outline-none focus:ring-2 ${
             errors.amount
               ? 'border-red-400 focus:ring-red-300'
-              : 'border-gray-300 focus:ring-green-400'
+              : 'border-gray-300 focus:ring-blue-600'
           }`}
         />
         {errors.amount && (
@@ -131,7 +131,7 @@ const AddOperationForm: React.FC<AddOperationFormProps> = ({ type }) => {
           className={`w-full rounded-md border px-3 py-2 text-md focus:outline-none focus:ring-2 ${
             errors.date
               ? 'border-red-400 focus:ring-red-300'
-              : 'border-gray-300 focus:ring-green-400'
+              : 'border-gray-300 focus:ring-blue-600'
           }`}
         />
         {errors.date && (

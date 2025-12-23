@@ -1,21 +1,24 @@
-import React from 'react'
-import AddOperationForm from '../components/AddOperationForm';
+import AddOperationForm from "../components/AddOperationForm";
 import { useParams, Navigate } from "react-router-dom";
-import { parseOperationType } from '../misc/parser';
+import { parseOperationType } from "../misc/parser";
 
 type RouteParams = {
   operationId?: string;
 };
 
 const AddOperationPage: React.FC = () => {
-  const {operationId} = useParams<RouteParams>();
+  const { operationId } = useParams<RouteParams>();
   const operationType = parseOperationType(operationId);
-    
+
   if (!operationType) {
     return <Navigate to="/" replace />;
   }
 
-  return <AddOperationForm type={operationType} />;
-}; 
+  return (
+    <div className="mt-10">
+      <AddOperationForm type={operationType} />
+    </div>
+  );
+};
 
 export default AddOperationPage;
