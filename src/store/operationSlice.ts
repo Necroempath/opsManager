@@ -19,7 +19,7 @@ export const operationSlice = createSlice({
             state.operations.push(new Operation(action.payload));
         },
         deleteOperation: (state, action: PayloadAction<string>) => {
-            state.operations = state.operations.filter(op => op.id !== action.payload);
+            state.operations = state.operations.filter(op => op.title !== action.payload);
         }
     }
 });
