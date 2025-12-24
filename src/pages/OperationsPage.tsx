@@ -6,6 +6,7 @@ import type { OperationFilter } from "../Models/Operation";
 import { useState } from "react";
 import DeletionPortal from "../components/DeletionPortal";
 import { deleteOperation } from "../store/operationSlice";
+import Totals from "../components/Totals";
 
 const OperationsPage = () => {
   const [type, setType] = useState<OperationFilter>("all");
@@ -22,7 +23,7 @@ const OperationsPage = () => {
   );
 
   return (
-    <div className="mt-10">
+    <>
       <div className="flex justify-between">
         <OperationTypeFilter
           value={type}
@@ -35,7 +36,7 @@ const OperationsPage = () => {
           Delete operations
         </button>
       </div>
-
+      <Totals operations={operations}/>
       <OperationTable operations={operations} categories={categories} />
 
       <DeletionPortal
@@ -46,7 +47,7 @@ const OperationsPage = () => {
           setIsOpen(p => p = false);
         }}
       />
-    </div>
+    </>
   );
 };
 

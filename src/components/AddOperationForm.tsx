@@ -69,7 +69,7 @@ const AddOperationForm: React.FC<AddOperationFormProps> = ({ type }) => {
    return (
     <form
       onSubmit={handleSubmit}
-      className="max-w-md rounded-md border m-auto border-gray-300 bg-white p-6 shadow-md"
+      className="max-w-md rounded-md border mt-10 m-auto border-gray-300 bg-white p-6 shadow-md"
     >
       <h2 className="mb-4 text-lg font-medium text-gray-800">
         Add {type === 'income' ? 'Income' : 'Expense'}

@@ -15,9 +15,9 @@ const AddOperationPage: React.FC = () => {
   }
 
   return (
-    <div className="mt-10">
+    <>
       <AddOperationForm type={operationType} />
-    </div>
+    </>
   );
 };
 

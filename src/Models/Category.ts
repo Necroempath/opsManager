@@ -17,3 +17,7 @@ export class Category {
         this.builtin = props.builtin;
     }
 }
+
+export interface CategoryWithUsage extends Category {
+    usageCount: number
+}
