@@ -38,10 +38,7 @@ const AddCategoryForm: React.FC = () => {
       <div className="flex gap-3">
         <input
           value={name}
-          onChange={(e) => {
-            setName(e.target.value);
-            if (error) setError("");
-          }}
+          onChange={e => setName(e.target.value)}
           placeholder="Category name"
           className={`w-full rounded-md border px-3 py-2 text-md focus:outline-none focus:ring-2 ${
             error
