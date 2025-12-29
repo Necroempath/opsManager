@@ -1,73 +1,63 @@
-# React + TypeScript + Vite
+Operations Manager is a client-side React application for managing financial operations
+(income and expenses) with categories, filtering, totals calculation, and local persistence.
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+The project focuses on clean architecture, predictable state management, and a calm, readable UI rather than visual overload.
 
-Currently, two official plugins are available:
+**Features**
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+Add income and expense operations
+Categorize operations
+View all operations in a structured table
+Filter operations by type (All / Income / Expense)
 
-## React Compiler
+**Automatic calculation of:**
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+Total income
 
-## Expanding the ESLint configuration
+Total expenses
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+Net balance
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+**Category management**
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+Built-in categories (cannot be deleted)
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Custom categories
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+Category deletion blocked if used by any operation
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+Persistent storage using localStorage
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+Safe deletion via modal dialog (React Portal)
+
+**Tech Stack**
+
+React (with Hooks)
+
+TypeScript
+
+Redux Toolkit
+
+React Redux
+
+React Router (Data Router)
+
+Tailwind CSS
+
+UUID for entity identification
+
+Vite as build tool
+
+**Architectural Decisions**
+State Management
+
+Global state is handled with Redux Toolkit
+
+All reducers work only with plain serializable objects
+
+Local storage persistence is implemented via a store subscriber, not inside reducers
+
+
+Subscriber saves state snapshot
+
+No side effects inside reducers
