@@ -82,10 +82,10 @@ const OperationTable: React.FC<OperationTableProps> = ({
       </table>
       <DeletionPortal
         id={id}
-        onCancel={() => setId((p) => (p = ''))}
+        onCancel={() => setId('')}
         onSubmit={() => {
           dispatch(deleteOperation(id));
-          setId((p) => (p = ''));
+          setId('');
         }}
       />
     </div>

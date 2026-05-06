@@ -5,14 +5,6 @@ import CategoryTable from "../components/CategoryTable";
 import type { CategoryWithUsage } from "../Models/Category";
 import { useMemo } from "react";
 
-type CategoryDeletion = "none" | "disabled" | "enabled";
-
-type CategoryRow = {
-  value: string;
-  refcount: number;
-  state: CategoryDeletion;
-};
-
 const CategoriesPage = () => {
   const categories = useSelector(
     (state: RootState) => state.categories.categories

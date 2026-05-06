@@ -1,4 +1,4 @@
-import { useDispatch, useSelector } from "react-redux";
+import { useSelector } from "react-redux";
 import type { RootState } from "../store";
 import OperationTable from "../components/OperationTable";
 import OperationTypeFilter from "../components/OperationTypeFilter";
@@ -23,7 +23,7 @@ const OperationsPage = () => {
       <div className="flex justify-between">
         <OperationTypeFilter
           value={type}
-          onChange={(value: OperationFilter) => setType((p) => (p = value))}
+          onChange={(value: OperationFilter) => setType(value)}
         />
       </div>
       <Totals operations={operations}/>
